@@ -134,7 +134,6 @@ Create a `.env` file in the project root with the following variables:
 ```bash
 ODOO_EMAIL=your-email@example.com
 ODOO_PASSWORD=your-password
-ODOO_URL=https://your-odoo-instance.odoo.com/odoo/sales
 ```
 
 ## Browser Configuration
