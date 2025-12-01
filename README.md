@@ -28,6 +28,10 @@ Automated E2E testing suite for Odoo ERP system using Playwright. This project d
 ### Prerequisites
 - Node.js (v16 or higher)
 - npm or yarn
+- Odoo ERP instance with access credentials
+- **Pre-created test data in Odoo:**
+  - Customer: `Lincoln University`
+  - Product: `product1`
 
 ### Setup
 ```bash
@@ -105,6 +109,7 @@ playwright-demo/
 - Each test includes automatic login/logout via hooks
 - Order number is shared across test cases using a global variable
 - Sensitive credentials are loaded from `.env` file (not committed to git)
+- **Important**: Customer (`Lincoln University`) and Product (`product1`) must be manually created in your Odoo instance before running tests
 
 
 

@@ -8,6 +8,10 @@ const ODOO_EMAIL = process.env.ODOO_EMAIL || '';
 const ODOO_PASSWORD = process.env.ODOO_PASSWORD || '';
 const ODOO_URL = process.env.ODOO_URL || '';
 
+// Test data constants
+const CUSTOMER_NAME = 'Lincoln University';
+const PRODUCT_NAME = 'product1';
+
 test.describe.serial('Odoo Sales Order to Invoice Workflow', () => {
 
     test.beforeEach(async ({ page }) => {
@@ -31,23 +35,21 @@ test.describe.serial('Odoo Sales Order to Invoice Workflow', () => {
 
         const customer_input = page.getByRole('combobox', { name: 'Customer' });
         await customer_input.click();
-        const searchText = 'Lincoln University';
-        await customer_input.pressSequentially(searchText);
-        const firstOption = page.getByRole('option', { name: searchText }).first();
+        await customer_input.pressSequentially(CUSTOMER_NAME);
+        const firstOption = page.getByRole('option', { name: CUSTOMER_NAME }).first();
         await firstOption.waitFor({ state: 'visible' });
         await firstOption.click();
-        await expect(customer_input).toHaveValue(searchText);
+        await expect(customer_input).toHaveValue(CUSTOMER_NAME);
 
         await page.getByRole('button', { name: 'Add a product' }).click();
 
         const product_input = page.getByRole('combobox', { name: 'Search a product' });
         await product_input.click();
-        const product_searchText = 'product1';
-        await product_input.fill(product_searchText);
-        const product_firstOption = page.getByRole('option', { name: product_searchText }).first();
+        await product_input.fill(PRODUCT_NAME);
+        const product_firstOption = page.getByRole('option', { name: PRODUCT_NAME }).first();
         await product_firstOption.waitFor({ state: 'visible' });
         await product_firstOption.click();
-        await expect(product_input).toHaveValue(product_searchText);
+        await expect(product_input).toHaveValue(PRODUCT_NAME);
 
 
         await page.locator('button[aria-label="Save manually"]').click();
