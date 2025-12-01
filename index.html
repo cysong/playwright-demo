@@ -43,6 +43,7 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             margin-bottom: 20px;
             transition: transform 0.2s;
+            cursor: pointer;
         }
         .card:hover {
             transform: translateY(-5px);
@@ -114,6 +115,29 @@
         </div>
 
         
+        <div class="card" onclick="location.href='./reports/18/'">
+            <div class="report-link">
+                <div class="card-header">
+                    <div>
+                        <h3>Run #18</h3>
+                        <div class="subtitle">
+                            <span>Time: 2025-12-01 22:29:43.649 UTC</span>
+                            <span class="dot">•</span>
+                            <span>Duration: 3m 28s</span>
+                            <span class="dot">•</span><span>Commit: <a class="commit-link" href="https://github.com/cysong/playwright-demo/commit/96aa3bd57a2d32a324c86f75fe43942dd012fdad" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">96aa3bd</a></span>
+                        </div>
+                    </div>
+                    <div class="badge-group">
+                        <span class="status-badge failed">&times; Failed</span>
+                        <span class="badge latest">Latest</span>
+                    </div>
+                </div>
+                <div class="report-info">
+                    <p>Total 9 · Pass 5 · Fail 1 · Skip 2 · Flaky 1</p>
+                </div>
+            </div>
+        </div>
+
         <div class="card" onclick="location.href='./reports/17/'">
             <div class="report-link">
                 <div class="card-header">
@@ -128,7 +152,7 @@
                     </div>
                     <div class="badge-group">
                         <span class="status-badge passed">&check; Passed</span>
-                        <span class="badge latest">Latest</span>
+                        <span class="badge view">View</span>
                     </div>
                 </div>
                 <div class="report-info">
