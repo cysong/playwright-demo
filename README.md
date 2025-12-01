@@ -3,6 +3,10 @@
 ## Overview
 Automated E2E testing suite for Odoo ERP system using Playwright. This project demonstrates the complete sales order to invoice workflow, covering critical business processes across Sales, Inventory, and Accounting modules.
 
+![Playwright Tests](https://github.com/cysong/playwright-demo/actions/workflows/playwright.yml/badge.svg)
+
+**Test Report**：https://cysong.github.io/playwright-demo/
+
 ## Test Cases
 
 ### Test Case 1: Create Sales Order
