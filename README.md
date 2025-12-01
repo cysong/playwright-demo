@@ -73,6 +73,39 @@ npm run test:report
 npx playwright test tests/odoo.spec.ts -g "Test Case 1"
 ```
 
+### Record New Tests with Codegen
+Playwright provides a built-in test generator to record user interactions and generate test scripts:
+
+```bash
+# Start recording a new test
+npx playwright codegen
+
+# Record with specific browser
+npx playwright codegen --browser=chromium
+
+# Record with target URL
+npx playwright codegen https://your-odoo-instance.odoo.com
+
+# Record with device emulation
+npx playwright codegen --device="iPhone 13"
+
+# Record with custom viewport
+npx playwright codegen --viewport-size=1280,720
+```
+
+**Codegen Features:**
+- Records clicks, inputs, and navigation
+- Generates locators automatically
+- Supports assertions through inspector
+- Exports to test file format
+
+**Usage Tips:**
+1. Start codegen with your target URL
+2. Perform actions in the browser
+3. Use "Assert" button to add verifications
+4. Copy generated code to your test file
+5. Refine selectors and add custom logic as needed
+
 ## Environment Variables
 
 Create a `.env` file in the project root with the following variables:
