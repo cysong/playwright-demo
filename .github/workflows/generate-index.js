@@ -8,6 +8,33 @@ const repoName = repository.split('/')[1] || 'playwright-demo';
 const outputDir = process.env.OUTPUT_DIR || '.';
 const reportsDir = path.join(outputDir, 'reports');
 
+// Try to read Playwright stats from a run directory.
+function loadStats(runDir) {
+  const candidates = [
+    path.join(runDir, 'data', 'report.json'),
+    path.join(runDir, 'data', 'test-results.json'),
+  ];
+  for (const file of candidates) {
+    if (!fs.existsSync(file)) continue;
+    try {
+      const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+      const stats = data.stats || (data.summary && data.summary.stats) || data;
+      if (stats) {
+        return {
+          passed: Number(stats.expected ?? stats.passed ?? 0),
+          failed: Number(stats.unexpected ?? stats.failed ?? 0),
+          skipped: Number(stats.skipped ?? 0),
+          flaky: Number(stats.flaky ?? 0),
+          total: Number(stats.total ?? 0),
+        };
+      }
+    } catch (err) {
+      // Ignore parse errors; fall through to next candidate.
+    }
+  }
+  return null;
+}
+
 // Collect existing run directories for the list (descending by numeric run number when possible).
 let runs = [];
 if (fs.existsSync(reportsDir)) {
@@ -26,12 +53,18 @@ if (fs.existsSync(reportsDir)) {
 const cards = runs
   .map((run) => {
     const isLatest = String(run) === String(runNumber);
+    const stats = loadStats(path.join(reportsDir, run));
+    const statusLine = stats
+      ? `Total ${stats.total} | Pass ${stats.passed} | Fail ${stats.failed}` +
+        (stats.skipped ? ` | Skip ${stats.skipped}` : '') +
+        (stats.flaky ? ` | Flaky ${stats.flaky}` : '')
+      : 'Status: unknown';
     return `
         <div class="card">
             <a href="./reports/${run}/" class="report-link">
                 <div class="report-info">
                     <h3>Run #${run}</h3>
-                    <p>${isLatest ? 'Latest test execution report' : 'Historical test report'}</p>
+                    <p>${statusLine}</p>
                 </div>
                 <span class="badge ${isLatest ? 'latest' : ''}">${isLatest ? 'Latest' : 'View'}</span>
             </a>
