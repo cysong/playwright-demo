@@ -98,7 +98,7 @@ test.describe.serial('Odoo Sales Order to Invoice Workflow', () => {
         await page.getByRole('button', { name: 'Create Draft' }).click();
         await page.getByRole('button', { name: 'Confirm' }).click();
         await expect(page.locator('.o_statusbar_status button.o_arrow_button_current')).toHaveText('Posted');
-        const invoiceNumber = await page.locator('.oe_title').innerText();
+        const invoiceNumber = await page.locator('.oe_title h1').innerText();
         expect(invoiceNumber).toMatch(/^INV/)
         console.log(`Invoice number: ${invoiceNumber}`);
     });
