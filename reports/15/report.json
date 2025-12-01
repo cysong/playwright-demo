@@ -1,0 +1,1231 @@
+{
+  "config": {
+    "configFile": "/home/runner/work/playwright-demo/playwright-demo/playwright.config.ts",
+    "rootDir": "/home/runner/work/playwright-demo/playwright-demo/tests",
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/cysong/playwright-demo/commit/b4b77f53984f70e7ace89cb6aa013788061280bb",
+        "commitHash": "b4b77f53984f70e7ace89cb6aa013788061280bb",
+        "buildHref": "https://github.com/cysong/playwright-demo/actions/runs/19823106418"
+      },
+      "gitCommit": {
+        "shortHash": "b4b77f5",
+        "hash": "b4b77f53984f70e7ace89cb6aa013788061280bb",
+        "subject": "fix total, add git version",
+        "body": "fix total, add git version\n",
+        "author": {
+          "name": "Anson",
+          "email": "yansongc@gmail.com",
+          "time": 1764593091000
+        },
+        "committer": {
+          "name": "Anson",
+          "email": "yansongc@gmail.com",
+          "time": 1764593091000
+        },
+        "branch": "master"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-report/report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/playwright-demo/playwright-demo/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/cysong/playwright-demo/commit/b4b77f53984f70e7ace89cb6aa013788061280bb",
+            "commitHash": "b4b77f53984f70e7ace89cb6aa013788061280bb",
+            "buildHref": "https://github.com/cysong/playwright-demo/actions/runs/19823106418"
+          },
+          "gitCommit": {
+            "shortHash": "b4b77f5",
+            "hash": "b4b77f53984f70e7ace89cb6aa013788061280bb",
+            "subject": "fix total, add git version",
+            "body": "fix total, add git version\n",
+            "author": {
+              "name": "Anson",
+              "email": "yansongc@gmail.com",
+              "time": 1764593091000
+            },
+            "committer": {
+              "name": "Anson",
+              "email": "yansongc@gmail.com",
+              "time": 1764593091000
+            },
+            "branch": "master"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/playwright-demo/playwright-demo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/playwright-demo/playwright-demo/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/cysong/playwright-demo/commit/b4b77f53984f70e7ace89cb6aa013788061280bb",
+            "commitHash": "b4b77f53984f70e7ace89cb6aa013788061280bb",
+            "buildHref": "https://github.com/cysong/playwright-demo/actions/runs/19823106418"
+          },
+          "gitCommit": {
+            "shortHash": "b4b77f5",
+            "hash": "b4b77f53984f70e7ace89cb6aa013788061280bb",
+            "subject": "fix total, add git version",
+            "body": "fix total, add git version\n",
+            "author": {
+              "name": "Anson",
+              "email": "yansongc@gmail.com",
+              "time": 1764593091000
+            },
+            "committer": {
+              "name": "Anson",
+              "email": "yansongc@gmail.com",
+              "time": 1764593091000
+            },
+            "branch": "master"
+          },
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/runner/work/playwright-demo/playwright-demo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/playwright-demo/playwright-demo/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/cysong/playwright-demo/commit/b4b77f53984f70e7ace89cb6aa013788061280bb",
+            "commitHash": "b4b77f53984f70e7ace89cb6aa013788061280bb",
+            "buildHref": "https://github.com/cysong/playwright-demo/actions/runs/19823106418"
+          },
+          "gitCommit": {
+            "shortHash": "b4b77f5",
+            "hash": "b4b77f53984f70e7ace89cb6aa013788061280bb",
+            "subject": "fix total, add git version",
+            "body": "fix total, add git version\n",
+            "author": {
+              "name": "Anson",
+              "email": "yansongc@gmail.com",
+              "time": 1764593091000
+            },
+            "committer": {
+              "name": "Anson",
+              "email": "yansongc@gmail.com",
+              "time": 1764593091000
+            },
+            "branch": "master"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/runner/work/playwright-demo/playwright-demo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "odoo.spec.ts",
+      "file": "odoo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Odoo Sales Order to Invoice Workflow",
+          "file": "odoo.spec.ts",
+          "line": 63,
+          "column": 15,
+          "specs": [
+            {
+              "title": "Test Case 1: Create Sales Order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 31000,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                            "column": 24,
+                            "line": 100
+                          },
+                          "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n\n   98 |             await page.locator('button[aria-label=\"Save manually\"]').click();\n   99 |             // Wait for URL to change from /new to actual order ID (e.g., /74)\n> 100 |             await page.waitForURL(/\\/odoo\\/sales\\/\\d+/);\n      |                        ^\n  101 |         });\n  102 |\n  103 |         orderNumber = await getAndVerifyDocumentNumber(page, /^S\\d+/, 'Sales order number');\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Create new sales order",
+                          "duration": 5994,
+                          "steps": [
+                            {
+                              "title": "Select Customer: Lincoln University",
+                              "duration": 1314
+                            },
+                            {
+                              "title": "Select Search a product: product1",
+                              "duration": 1510
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Save sales order",
+                          "duration": 20797,
+                          "error": {
+                            "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================",
+                            "stack": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9",
+                            "location": {
+                              "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                              "column": 24,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  98 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[aria-label=\"Save manually\"]'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m  99 |\u001b[39m             \u001b[90m// Wait for URL to change from /new to actual order ID (e.g., /74)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/\\/odoo\\/sales\\/\\d+/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m         })\u001b[33m;\u001b[39m\n \u001b[90m 102 |\u001b[39m\n \u001b[90m 103 |\u001b[39m         orderNumber \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m getAndVerifyDocumentNumber(page\u001b[33m,\u001b[39m \u001b[35m/^S\\d+/\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Sales order number'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2025-12-01T12:45:57.743Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/playwright-demo/playwright-demo/test-results/odoo-Odoo-Sales-Order-to-I-53450-t-Case-1-Create-Sales-Order-chromium/error-context.md"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 31413,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                            "column": 24,
+                            "line": 100
+                          },
+                          "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n\n   98 |             await page.locator('button[aria-label=\"Save manually\"]').click();\n   99 |             // Wait for URL to change from /new to actual order ID (e.g., /74)\n> 100 |             await page.waitForURL(/\\/odoo\\/sales\\/\\d+/);\n      |                        ^\n  101 |         });\n  102 |\n  103 |         orderNumber = await getAndVerifyDocumentNumber(page, /^S\\d+/, 'Sales order number');\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "steps": [
+                        {
+                          "title": "Create new sales order",
+                          "duration": 5847,
+                          "steps": [
+                            {
+                              "title": "Select Customer: Lincoln University",
+                              "duration": 786
+                            },
+                            {
+                              "title": "Select Search a product: product1",
+                              "duration": 1533
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Save sales order",
+                          "duration": 21255,
+                          "error": {
+                            "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================",
+                            "stack": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9",
+                            "location": {
+                              "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                              "column": 24,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  98 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[aria-label=\"Save manually\"]'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m  99 |\u001b[39m             \u001b[90m// Wait for URL to change from /new to actual order ID (e.g., /74)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/\\/odoo\\/sales\\/\\d+/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m         })\u001b[33m;\u001b[39m\n \u001b[90m 102 |\u001b[39m\n \u001b[90m 103 |\u001b[39m         orderNumber \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m getAndVerifyDocumentNumber(page\u001b[33m,\u001b[39m \u001b[35m/^S\\d+/\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Sales order number'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2025-12-01T12:46:31.967Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/playwright-demo/playwright-demo/test-results/odoo-Odoo-Sales-Order-to-I-53450-t-Case-1-Create-Sales-Order-chromium-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/playwright-demo/playwright-demo/test-results/odoo-Odoo-Sales-Order-to-I-53450-t-Case-1-Create-Sales-Order-chromium-retry1/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 31026,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                            "column": 24,
+                            "line": 100
+                          },
+                          "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n\n   98 |             await page.locator('button[aria-label=\"Save manually\"]').click();\n   99 |             // Wait for URL to change from /new to actual order ID (e.g., /74)\n> 100 |             await page.waitForURL(/\\/odoo\\/sales\\/\\d+/);\n      |                        ^\n  101 |         });\n  102 |\n  103 |         orderNumber = await getAndVerifyDocumentNumber(page, /^S\\d+/, 'Sales order number');\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "steps": [
+                        {
+                          "title": "Create new sales order",
+                          "duration": 5964,
+                          "steps": [
+                            {
+                              "title": "Select Customer: Lincoln University",
+                              "duration": 1311
+                            },
+                            {
+                              "title": "Select Search a product: product1",
+                              "duration": 1493
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Save sales order",
+                          "duration": 20983,
+                          "error": {
+                            "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================",
+                            "stack": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9",
+                            "location": {
+                              "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                              "column": 24,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  98 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[aria-label=\"Save manually\"]'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m  99 |\u001b[39m             \u001b[90m// Wait for URL to change from /new to actual order ID (e.g., /74)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/\\/odoo\\/sales\\/\\d+/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m         })\u001b[33m;\u001b[39m\n \u001b[90m 102 |\u001b[39m\n \u001b[90m 103 |\u001b[39m         orderNumber \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m getAndVerifyDocumentNumber(page\u001b[33m,\u001b[39m \u001b[35m/^S\\d+/\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Sales order number'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2025-12-01T12:47:04.371Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/playwright-demo/playwright-demo/test-results/odoo-Odoo-Sales-Order-to-I-53450-t-Case-1-Create-Sales-Order-chromium-retry2/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8f497a8684a5fa265183-364c6ff4331a32636bc0",
+              "file": "odoo.spec.ts",
+              "line": 84,
+              "column": 9
+            },
+            {
+              "title": "Test Case 2: Confirm Sales Order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T12:46:31.395Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-12-01T12:47:03.793Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "startTime": "2025-12-01T12:47:35.530Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8f497a8684a5fa265183-a4c4edd81822e5c78df4",
+              "file": "odoo.spec.ts",
+              "line": 107,
+              "column": 9
+            },
+            {
+              "title": "Test Case 3: Create Invoice",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T12:46:31.395Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-12-01T12:47:03.793Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "startTime": "2025-12-01T12:47:35.530Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8f497a8684a5fa265183-7385c867d758ff66f11d",
+              "file": "odoo.spec.ts",
+              "line": 120,
+              "column": 9
+            },
+            {
+              "title": "Test Case 1: Create Sales Order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 31145,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                            "column": 24,
+                            "line": 100
+                          },
+                          "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n\n   98 |             await page.locator('button[aria-label=\"Save manually\"]').click();\n   99 |             // Wait for URL to change from /new to actual order ID (e.g., /74)\n> 100 |             await page.waitForURL(/\\/odoo\\/sales\\/\\d+/);\n      |                        ^\n  101 |         });\n  102 |\n  103 |         orderNumber = await getAndVerifyDocumentNumber(page, /^S\\d+/, 'Sales order number');\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Create new sales order",
+                          "duration": 6597,
+                          "steps": [
+                            {
+                              "title": "Select Customer: Lincoln University",
+                              "duration": 1064
+                            },
+                            {
+                              "title": "Select Search a product: product1",
+                              "duration": 1641
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Save sales order",
+                          "duration": 19544,
+                          "error": {
+                            "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================",
+                            "stack": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9",
+                            "location": {
+                              "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                              "column": 24,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  98 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[aria-label=\"Save manually\"]'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m  99 |\u001b[39m             \u001b[90m// Wait for URL to change from /new to actual order ID (e.g., /74)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/\\/odoo\\/sales\\/\\d+/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m         })\u001b[33m;\u001b[39m\n \u001b[90m 102 |\u001b[39m\n \u001b[90m 103 |\u001b[39m         orderNumber \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m getAndVerifyDocumentNumber(page\u001b[33m,\u001b[39m \u001b[35m/^S\\d+/\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Sales order number'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2025-12-01T12:47:36.103Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/playwright-demo/playwright-demo/test-results/odoo-Odoo-Sales-Order-to-I-53450-t-Case-1-Create-Sales-Order-firefox/error-context.md"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 31717,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                            "column": 24,
+                            "line": 100
+                          },
+                          "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n\n   98 |             await page.locator('button[aria-label=\"Save manually\"]').click();\n   99 |             // Wait for URL to change from /new to actual order ID (e.g., /74)\n> 100 |             await page.waitForURL(/\\/odoo\\/sales\\/\\d+/);\n      |                        ^\n  101 |         });\n  102 |\n  103 |         orderNumber = await getAndVerifyDocumentNumber(page, /^S\\d+/, 'Sales order number');\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "steps": [
+                        {
+                          "title": "Create new sales order",
+                          "duration": 6628,
+                          "steps": [
+                            {
+                              "title": "Select Customer: Lincoln University",
+                              "duration": 1059
+                            },
+                            {
+                              "title": "Select Search a product: product1",
+                              "duration": 1321
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Save sales order",
+                          "duration": 20023,
+                          "error": {
+                            "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================",
+                            "stack": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9",
+                            "location": {
+                              "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                              "column": 24,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  98 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[aria-label=\"Save manually\"]'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m  99 |\u001b[39m             \u001b[90m// Wait for URL to change from /new to actual order ID (e.g., /74)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/\\/odoo\\/sales\\/\\d+/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m         })\u001b[33m;\u001b[39m\n \u001b[90m 102 |\u001b[39m\n \u001b[90m 103 |\u001b[39m         orderNumber \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m getAndVerifyDocumentNumber(page\u001b[33m,\u001b[39m \u001b[35m/^S\\d+/\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Sales order number'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2025-12-01T12:48:09.003Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/playwright-demo/playwright-demo/test-results/odoo-Odoo-Sales-Order-to-I-53450-t-Case-1-Create-Sales-Order-firefox-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/playwright-demo/playwright-demo/test-results/odoo-Odoo-Sales-Order-to-I-53450-t-Case-1-Create-Sales-Order-firefox-retry1/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 31119,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                            "column": 24,
+                            "line": 100
+                          },
+                          "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n\n   98 |             await page.locator('button[aria-label=\"Save manually\"]').click();\n   99 |             // Wait for URL to change from /new to actual order ID (e.g., /74)\n> 100 |             await page.waitForURL(/\\/odoo\\/sales\\/\\d+/);\n      |                        ^\n  101 |         });\n  102 |\n  103 |         orderNumber = await getAndVerifyDocumentNumber(page, /^S\\d+/, 'Sales order number');\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "steps": [
+                        {
+                          "title": "Create new sales order",
+                          "duration": 6377,
+                          "steps": [
+                            {
+                              "title": "Select Customer: Lincoln University",
+                              "duration": 1105
+                            },
+                            {
+                              "title": "Select Search a product: product1",
+                              "duration": 1277
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Save sales order",
+                          "duration": 19812,
+                          "error": {
+                            "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================",
+                            "stack": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9",
+                            "location": {
+                              "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                              "column": 24,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  98 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[aria-label=\"Save manually\"]'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m  99 |\u001b[39m             \u001b[90m// Wait for URL to change from /new to actual order ID (e.g., /74)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/\\/odoo\\/sales\\/\\d+/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m         })\u001b[33m;\u001b[39m\n \u001b[90m 102 |\u001b[39m\n \u001b[90m 103 |\u001b[39m         orderNumber \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m getAndVerifyDocumentNumber(page\u001b[33m,\u001b[39m \u001b[35m/^S\\d+/\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Sales order number'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2025-12-01T12:48:42.747Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/playwright-demo/playwright-demo/test-results/odoo-Odoo-Sales-Order-to-I-53450-t-Case-1-Create-Sales-Order-firefox-retry2/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8f497a8684a5fa265183-974a7a7a1631f2cf105b",
+              "file": "odoo.spec.ts",
+              "line": 84,
+              "column": 9
+            },
+            {
+              "title": "Test Case 2: Confirm Sales Order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T12:48:08.434Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-12-01T12:48:42.157Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "startTime": "2025-12-01T12:49:14.800Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8f497a8684a5fa265183-7beb5317f23b78392c11",
+              "file": "odoo.spec.ts",
+              "line": 107,
+              "column": 9
+            },
+            {
+              "title": "Test Case 3: Create Invoice",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T12:48:08.434Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-12-01T12:48:42.157Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "startTime": "2025-12-01T12:49:14.800Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8f497a8684a5fa265183-971f0b6e96055703466f",
+              "file": "odoo.spec.ts",
+              "line": 120,
+              "column": 9
+            },
+            {
+              "title": "Test Case 1: Create Sales Order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 31871,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                            "column": 24,
+                            "line": 100
+                          },
+                          "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n\n   98 |             await page.locator('button[aria-label=\"Save manually\"]').click();\n   99 |             // Wait for URL to change from /new to actual order ID (e.g., /74)\n> 100 |             await page.waitForURL(/\\/odoo\\/sales\\/\\d+/);\n      |                        ^\n  101 |         });\n  102 |\n  103 |         orderNumber = await getAndVerifyDocumentNumber(page, /^S\\d+/, 'Sales order number');\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Create new sales order",
+                          "duration": 12909,
+                          "steps": [
+                            {
+                              "title": "Select Customer: Lincoln University",
+                              "duration": 3212
+                            },
+                            {
+                              "title": "Select Search a product: product1",
+                              "duration": 3178
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Save sales order",
+                          "duration": 9991,
+                          "error": {
+                            "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================",
+                            "stack": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9",
+                            "location": {
+                              "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                              "column": 24,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  98 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[aria-label=\"Save manually\"]'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m  99 |\u001b[39m             \u001b[90m// Wait for URL to change from /new to actual order ID (e.g., /74)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/\\/odoo\\/sales\\/\\d+/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m         })\u001b[33m;\u001b[39m\n \u001b[90m 102 |\u001b[39m\n \u001b[90m 103 |\u001b[39m         orderNumber \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m getAndVerifyDocumentNumber(page\u001b[33m,\u001b[39m \u001b[35m/^S\\d+/\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Sales order number'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2025-12-01T12:49:15.372Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/playwright-demo/playwright-demo/test-results/odoo-Odoo-Sales-Order-to-I-53450-t-Case-1-Create-Sales-Order-webkit/error-context.md"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 32486,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                            "column": 24,
+                            "line": 100
+                          },
+                          "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n\n   98 |             await page.locator('button[aria-label=\"Save manually\"]').click();\n   99 |             // Wait for URL to change from /new to actual order ID (e.g., /74)\n> 100 |             await page.waitForURL(/\\/odoo\\/sales\\/\\d+/);\n      |                        ^\n  101 |         });\n  102 |\n  103 |         orderNumber = await getAndVerifyDocumentNumber(page, /^S\\d+/, 'Sales order number');\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "steps": [
+                        {
+                          "title": "Create new sales order",
+                          "duration": 12651,
+                          "steps": [
+                            {
+                              "title": "Select Customer: Lincoln University",
+                              "duration": 2740
+                            },
+                            {
+                              "title": "Select Search a product: product1",
+                              "duration": 3357
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Save sales order",
+                          "duration": 14895,
+                          "error": {
+                            "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================",
+                            "stack": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9",
+                            "location": {
+                              "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                              "column": 24,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  98 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[aria-label=\"Save manually\"]'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m  99 |\u001b[39m             \u001b[90m// Wait for URL to change from /new to actual order ID (e.g., /74)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/\\/odoo\\/sales\\/\\d+/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m         })\u001b[33m;\u001b[39m\n \u001b[90m 102 |\u001b[39m\n \u001b[90m 103 |\u001b[39m         orderNumber \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m getAndVerifyDocumentNumber(page\u001b[33m,\u001b[39m \u001b[35m/^S\\d+/\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Sales order number'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2025-12-01T12:49:48.642Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/playwright-demo/playwright-demo/test-results/odoo-Odoo-Sales-Order-to-I-53450-t-Case-1-Create-Sales-Order-webkit-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/playwright-demo/playwright-demo/test-results/odoo-Odoo-Sales-Order-to-I-53450-t-Case-1-Create-Sales-Order-webkit-retry1/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 31883,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                            "column": 24,
+                            "line": 100
+                          },
+                          "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n\n   98 |             await page.locator('button[aria-label=\"Save manually\"]').click();\n   99 |             // Wait for URL to change from /new to actual order ID (e.g., /74)\n> 100 |             await page.waitForURL(/\\/odoo\\/sales\\/\\d+/);\n      |                        ^\n  101 |         });\n  102 |\n  103 |         orderNumber = await getAndVerifyDocumentNumber(page, /^S\\d+/, 'Sales order number');\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "steps": [
+                        {
+                          "title": "Create new sales order",
+                          "duration": 11993,
+                          "steps": [
+                            {
+                              "title": "Select Customer: Lincoln University",
+                              "duration": 2539
+                            },
+                            {
+                              "title": "Select Search a product: product1",
+                              "duration": 3172
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Save sales order",
+                          "duration": 15074,
+                          "error": {
+                            "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================",
+                            "stack": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n  navigated to \"https://lincoln-university.odoo.com/web/login?redirect=%2Fodoo%3F\"\n============================================================\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:100:24\n    at /home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts:97:9",
+                            "location": {
+                              "file": "/home/runner/work/playwright-demo/playwright-demo/tests/odoo.spec.ts",
+                              "column": 24,
+                              "line": 100
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  98 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[aria-label=\"Save manually\"]'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m  99 |\u001b[39m             \u001b[90m// Wait for URL to change from /new to actual order ID (e.g., /74)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 100 |\u001b[39m             \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[35m/\\/odoo\\/sales\\/\\d+/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 101 |\u001b[39m         })\u001b[33m;\u001b[39m\n \u001b[90m 102 |\u001b[39m\n \u001b[90m 103 |\u001b[39m         orderNumber \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m getAndVerifyDocumentNumber(page\u001b[33m,\u001b[39m \u001b[35m/^S\\d+/\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Sales order number'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2025-12-01T12:50:22.267Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/playwright-demo/playwright-demo/test-results/odoo-Odoo-Sales-Order-to-I-53450-t-Case-1-Create-Sales-Order-webkit-retry2/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8f497a8684a5fa265183-958688051b438eb47448",
+              "file": "odoo.spec.ts",
+              "line": 84,
+              "column": 9
+            },
+            {
+              "title": "Test Case 2: Confirm Sales Order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T12:49:48.087Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-12-01T12:50:21.698Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "startTime": "2025-12-01T12:50:54.418Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8f497a8684a5fa265183-2f5ec3ad40f42a069759",
+              "file": "odoo.spec.ts",
+              "line": 107,
+              "column": 9
+            },
+            {
+              "title": "Test Case 3: Create Invoice",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T12:49:48.088Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-12-01T12:50:21.698Z",
+                      "annotations": [],
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "startTime": "2025-12-01T12:50:54.418Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "8f497a8684a5fa265183-df91a073b66387ecd40f",
+              "file": "odoo.spec.ts",
+              "line": 120,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-12-01T12:45:57.106Z",
+    "duration": 297325.301,
+    "expected": 0,
+    "skipped": 6,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

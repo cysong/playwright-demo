@@ -33,6 +33,8 @@
         .subtitle {
             color: #718096;
             font-size: 1.1rem;
+            display: block;
+            text-align: center;
         }
         .card {
             background: white;
@@ -85,11 +87,6 @@
             font-size: 0.95rem;
         }
         .dot { color: #cbd5e0; }
-        .status-text { font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
-        .status-icon { font-size: 1rem; }
-        .status-text.passed { color: #2f855a; }
-        .status-text.failed { color: #c53030; }
-        .status-text.unknown { color: #718096; }
         .status-badge {
             padding: 8px 14px;
             border-radius: 16px;
@@ -99,6 +96,8 @@
         .status-badge.passed { background: #48bb78; color: #fff; }
         .status-badge.failed { background: #f56565; color: #fff; }
         .status-badge.unknown { background: #a0aec0; color: #fff; }
+        .commit-link { color: #2b6cb0; text-decoration: underline; }
+        .commit-link:hover { text-decoration: none; }
         .footer {
             text-align: center;
             color: white;
@@ -116,23 +115,47 @@
 
         
         <div class="card">
+            <a href="./reports/15/" class="report-link">
+                <div class="card-header">
+                    <div>
+                        <h3>Run #15</h3>
+                        <div class="subtitle">
+                            <span>Time: 2025-12-01 12:45:57.106 UTC</span>
+                            <span class="dot">•</span>
+                            <span>Duration: 4m 57s</span>
+                            
+                        </div>
+                    </div>
+                    <div class="badge-group">
+                        <span class="status-badge failed">&times; Failed</span>
+                        <span class="badge latest">Latest</span>
+                    </div>
+                </div>
+                <div class="report-info">
+                    <p>Total 9 · Pass 0 · Fail 3 · Skip 6</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="card">
             <a href="./reports/14/" class="report-link">
                 <div class="card-header">
                     <div>
                         <h3>Run #14</h3>
                         <div class="subtitle">
-                            <span>Time: 12/1/2025, 12:22:14 PM</span>
+                            <span>Time: 2025-12-01 12:22:14.477 UTC</span>
                             <span class="dot">•</span>
                             <span>Duration: 2m 30s</span>
+                            
                         </div>
                     </div>
                     <div class="badge-group">
-                        <span class="status-badge unknown">? Unknown</span>
-                        <span class="badge latest">Latest</span>
+                        <span class="status-badge passed">&check; Passed</span>
+                        <span class="badge view">View</span>
                     </div>
                 </div>
                 <div class="report-info">
-                    <p>Total 0 · Pass 8 · Fail 0 · Flaky 1</p>
+                    <p>Total 9 · Pass 8 · Fail 0 · Flaky 1</p>
                 </div>
             </a>
         </div>
@@ -143,9 +166,10 @@
                     <div>
                         <h3>Run #13</h3>
                         <div class="subtitle">
-                            <span>Time: 12/1/2025, 12:05:28 PM</span>
+                            <span>Time: 2025-12-01 12:05:28.495 UTC</span>
                             <span class="dot">•</span>
                             <span>Duration: 3m 28s</span>
+                            
                         </div>
                     </div>
                     <div class="badge-group">
@@ -154,7 +178,7 @@
                     </div>
                 </div>
                 <div class="report-info">
-                    <p>Total 0 · Pass 5 · Fail 1 · Skip 2 · Flaky 1</p>
+                    <p>Total 9 · Pass 5 · Fail 1 · Skip 2 · Flaky 1</p>
                 </div>
             </a>
         </div>
@@ -168,6 +192,7 @@
                             <span>Time: N/A</span>
                             <span class="dot">•</span>
                             <span>Duration: N/A</span>
+                            
                         </div>
                     </div>
                     <div class="badge-group">
@@ -190,6 +215,7 @@
                             <span>Time: N/A</span>
                             <span class="dot">•</span>
                             <span>Duration: N/A</span>
+                            
                         </div>
                     </div>
                     <div class="badge-group">
@@ -212,6 +238,7 @@
                             <span>Time: N/A</span>
                             <span class="dot">•</span>
                             <span>Duration: N/A</span>
+                            
                         </div>
                     </div>
                     <div class="badge-group">
@@ -234,6 +261,7 @@
                             <span>Time: N/A</span>
                             <span class="dot">•</span>
                             <span>Duration: N/A</span>
+                            
                         </div>
                     </div>
                     <div class="badge-group">
