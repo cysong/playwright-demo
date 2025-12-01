@@ -11,6 +11,7 @@ const reportsDir = path.join(outputDir, 'reports');
 // Try to read Playwright stats from a run directory.
 function loadStats(runDir) {
   const candidates = [
+    path.join(runDir, 'report.json'),
     path.join(runDir, 'data', 'report.json'),
     path.join(runDir, 'data', 'test-results.json'),
   ];
