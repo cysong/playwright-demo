@@ -194,6 +194,7 @@ const indexHtml = `
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             margin-bottom: 20px;
             transition: transform 0.2s;
+            cursor: pointer;
         }
         .card:hover {
             transform: translateY(-5px);
