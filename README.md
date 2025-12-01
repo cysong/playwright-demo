@@ -63,9 +63,30 @@ npm run test:headed
 # Run in interactive UI mode
 npm run test:ui
 
-# View test report
+# View test report (after test execution)
 npm run test:report
 ```
+
+### View Test Results
+After running tests, Playwright generates detailed HTML reports:
+
+```bash
+# Generate and open HTML report
+npx playwright show-report
+
+# Reports include:
+# - Test execution timeline
+# - Screenshots and videos (on failure)
+# - Console logs
+# - Test steps with duration
+# - Attached data (order numbers, invoice numbers)
+```
+
+**Report Features:**
+- **Attachments**: Order and invoice numbers are attached to each test
+- **Test Steps**: Structured steps show operation flow (e.g., "Select Customer: Lincoln University")
+- **Console Output**: All `console.log` messages are captured
+- **Traces**: Full execution traces for debugging failures
 
 ### Run Specific Test
 ```bash
@@ -175,6 +196,8 @@ playwright-demo/
 - **Environment Configuration**: Credentials stored securely in `.env` file
 - **State Management**: Global variable to share order number across tests
 - **Assertions**: Validates status changes, order numbers, and invoice generation
+- **Smart Waiting**: Uses `page.waitForURL()` instead of arbitrary timeouts for reliable tests
+- **Structured Reporting**: Test steps and attachments for detailed reports
 
 ## Notes
 - Tests must run sequentially due to data dependencies
