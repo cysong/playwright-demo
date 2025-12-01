@@ -22,26 +22,16 @@ test.describe.serial('Odoo Sales Order to Invoice Workflow', () => {
     });
 
     test('Test Case 1: Create Sales Order', async ({ page }) => {
-
-        //create a sales order
         await page.getByRole('button', { name: 'New' }).click();
-        // 1. 定位到组合框 (输入框)
+
         const customer_input = page.getByRole('combobox', { name: 'Customer' });
-
-        // 2. 确保输入框聚焦（如果直接 fill 无法触发下拉菜单，则需要先 click）
         await customer_input.click();
-
-        // 3. 填充文本（触发搜索）
         const searchText = 'Lincoln University';
         await customer_input.pressSequentially(searchText);
-
-        // 4. 等待结果出现 (通常是等待第一个选项出现)
-        // 假设第一个结果是 'product1'
         const firstOption = page.getByRole('option', { name: searchText }).first();
         await firstOption.waitFor({ state: 'visible' });
         await firstOption.click();
         await expect(customer_input).toHaveValue(searchText);
-
 
         await page.getByRole('button', { name: 'Add a product' }).click();
 
@@ -67,9 +57,6 @@ test.describe.serial('Odoo Sales Order to Invoice Workflow', () => {
     });
 
     test('Test Case 2: Confirm Sales Order', async ({ page }) => {
-        // await page.getByRole('link', { name: 'Quotations' }).click();
-
-        //confirm the sales order
         await page.getByRole('searchbox').fill(orderNumber);
         await page.getByRole('menuitem', { name: `Search Order for: ${orderNumber}` }).click();
 
@@ -83,9 +70,6 @@ test.describe.serial('Odoo Sales Order to Invoice Workflow', () => {
     });
 
     test('Test Case 3: Create Invoice', async ({ page }) => {
-        // await page.getByRole('link', { name: 'Quotations' }).click();
-
-        //create a invoice
         await page.getByRole('searchbox').fill(orderNumber);
         await page.getByRole('menuitem', { name: `Search Order for: ${orderNumber}` }).click();
 
