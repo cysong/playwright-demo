@@ -28,19 +28,33 @@ function loadStats(runDir) {
     try {
       const data = JSON.parse(fs.readFileSync(file, 'utf8'));
       const stats = data.stats || (data.summary && data.summary.stats) || data;
-      const startTime = data.startTime ? new Date(data.startTime) : null;
-      const durationMs = Number(
-        (stats && stats.duration) ??
-          data.duration ??
-          (data.json && data.json.stats && data.json.stats.duration)
-      );
+      const startTime = stats?.startTime
+        ? new Date(stats.startTime)
+        : data.startTime
+        ? new Date(data.startTime)
+        : null;
+      const durationMs = Number.isFinite(stats?.duration)
+        ? Number(stats.duration)
+        : Number.isFinite(data.duration)
+        ? Number(data.duration)
+        : Number(
+            data.json && data.json.stats && Number(data.json.stats.duration)
+          );
       if (stats) {
+        const total =
+          Number(stats.total) ??
+          Number(
+            (stats.expected ?? 0) +
+              (stats.unexpected ?? 0) +
+              (stats.flaky ?? 0) +
+              (stats.skipped ?? 0)
+          );
         return {
           passed: Number(stats.expected ?? stats.passed ?? 0),
           failed: Number(stats.unexpected ?? stats.failed ?? 0),
           skipped: Number(stats.skipped ?? 0),
           flaky: Number(stats.flaky ?? 0),
-          total: Number(stats.total ?? 0),
+          total: Number.isFinite(total) ? total : 0,
           startTime,
           durationMs: Number.isFinite(durationMs) ? durationMs : null,
         };
@@ -84,6 +98,12 @@ const cards = runs
         : statusState === 'failed'
           ? 'Failed'
           : 'Unknown';
+    const iconHtml =
+      statusState === 'passed'
+        ? '&check;'
+        : statusState === 'failed'
+        ? '&times;'
+        : '?';
     const icon =
       statusState === 'passed' ? '✔' : statusState === 'failed' ? '✖' : '？';
     const timeText = stats?.startTime
@@ -104,17 +124,13 @@ const cards = runs
                     <div>
                         <h3>Run #${run}</h3>
                         <div class="subtitle">
-                            <span class="status-text ${statusState}">
-                                <span class="status-icon">${icon}</span> Status: ${statusLabel}
-                            </span>
-                            <span class="dot">•</span>
                             <span>Time: ${timeText}</span>
                             <span class="dot">•</span>
                             <span>Duration: ${durationText}</span>
                         </div>
                     </div>
                     <div class="badge-group">
-                        <span class="status-badge ${statusState}">${statusLabel}</span>
+                        <span class="status-badge ${statusState}">${iconHtml} ${statusLabel}</span>
                         ${isLatest ? '<span class="badge latest">Latest</span>' : '<span class="badge view">View</span>'}
                     </div>
                 </div>
