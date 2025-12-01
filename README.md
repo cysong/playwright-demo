@@ -116,6 +116,45 @@ ODOO_PASSWORD=your-password
 ODOO_URL=https://your-odoo-instance.odoo.com/odoo/sales
 ```
 
+## Browser Configuration
+
+### Default Browser
+By default, tests run on **Chromium**. To change or add browsers, edit `playwright.config.ts`:
+
+```typescript
+projects: [
+  { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+  { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
+  { name: 'webkit', use: { ...devices['Desktop Safari'] } },
+]
+```
+
+### Run Tests on Specific Browser
+```bash
+# Run on Chromium (default)
+npx playwright test
+
+# Run on specific browser
+npx playwright test --project=chromium
+npx playwright test --project=firefox
+npx playwright test --project=webkit
+
+# Run on all configured browsers
+npx playwright test --project=chromium --project=firefox --project=webkit
+```
+
+### Codegen with Specific Browser
+```bash
+# Generate tests with Chromium
+npx playwright codegen --browser=chromium
+
+# Generate tests with Firefox
+npx playwright codegen --browser=firefox
+
+# Generate tests with WebKit
+npx playwright codegen --browser=webkit
+```
+
 
 ## Project Structure
 ```
