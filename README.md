@@ -180,14 +180,17 @@ npx playwright codegen --browser=webkit
 ## Project Structure
 ```
 playwright-demo/
+├── .github/
+│   └── workflows/
+│       ├── playwright.yml             # GitHub Actions workflow
+│       └── generate-index.js          # Report index generator
 ├── tests/
-│   └── odoo.spec.ts          # Main test suite
-├── playwright.config.ts       # Playwright configuration
-├── package.json              # Dependencies and scripts
-├── .env                      # Environment variables (not in git)
-├── .env.example              # Environment variables template
-├── README.md                 # Project documentation
-└── Specifics.md              # Test case specifications
+│   └── odoo.spec.ts                   # Main test suite
+├── playwright.config.ts               # Playwright configuration
+├── package.json                       # Dependencies and scripts
+├── .env                               # Environment variables (not in git)
+├── .env.example                       # Environment variables template
+├── README.md                          # Project documentation
 ```
 
 ## Features
@@ -198,6 +201,58 @@ playwright-demo/
 - **Assertions**: Validates status changes, order numbers, and invoice generation
 - **Smart Waiting**: Uses `page.waitForURL()` instead of arbitrary timeouts for reliable tests
 - **Structured Reporting**: Test steps and attachments for detailed reports
+
+## CI/CD with GitHub Actions
+
+### Setup GitHub Actions
+
+This project includes automated testing via GitHub Actions. The workflow runs on:
+- Push to `main` or `master` branch
+- Pull requests to `main` or `master` branch
+- Manual trigger via GitHub UI
+
+### Configure Secrets
+
+Add these secrets to your GitHub repository:
+
+1. Go to **Settings** → **Secrets and variables** → **Actions**
+2. Add the following **Repository secrets**:
+   - `ODOO_EMAIL`: Your Odoo login email
+   - `ODOO_PASSWORD`: Your Odoo password
+
+### Enable GitHub Pages
+
+To view test reports online:
+
+1. Go to **Settings** → **Pages**
+2. Source: **Deploy from a branch**
+3. Branch: Select **`gh-pages`** and **`/ (root)`**
+4. Click **Save**
+
+### View Test Reports
+
+After workflow runs:
+
+1. **Artifacts**: Download from workflow run summary
+   - `playwright-report`: HTML report
+   - `test-results`: Raw test results
+
+2. **GitHub Pages**: Access reports at:
+   ```
+   https://<username>.github.io/<repository>/reports/<run-number>/
+   ```
+
+3. **Workflow Status Badge**: Add to README:
+   ```markdown
+   ![Playwright Tests](https://github.com/<username>/<repository>/actions/workflows/playwright.yml/badge.svg)
+   ```
+
+### Manual Trigger
+
+Run tests manually:
+1. Go to **Actions** tab
+2. Select **Playwright Tests** workflow
+3. Click **Run workflow**
 
 ## Notes
 - Tests must run sequentially due to data dependencies

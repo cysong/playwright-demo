@@ -6,7 +6,9 @@ let orderNumber: string;
 // Load environment variables
 const ODOO_EMAIL = process.env.ODOO_EMAIL || '';
 const ODOO_PASSWORD = process.env.ODOO_PASSWORD || '';
-const ODOO_URL = process.env.ODOO_URL || '';
+
+// Application constants
+const ODOO_URL = 'https://lincoln-university.odoo.com/odoo/sales';
 
 // Test data constants
 const CUSTOMER_NAME = 'Lincoln University';
