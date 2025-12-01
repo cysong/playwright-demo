@@ -104,7 +104,7 @@ const cards = runs
       : 'N/A';
     const commitText =
       stats?.commitHash && stats?.commitHref
-        ? `<a class="commit-link" href="${stats.commitHref}" target="_blank" rel="noopener noreferrer">${stats.commitHash}</a>`
+        ? `<a class="commit-link" href="${stats.commitHref}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">${stats.commitHash}</a>`
         : stats?.commitHash
         ? stats.commitHash
         : '';
@@ -114,8 +114,8 @@ const cards = runs
         (stats.flaky ? ` · Flaky ${stats.flaky}` : '')
       : 'Status: unknown';
     return `
-        <div class="card">
-            <a href="./reports/${run}/" class="report-link">
+        <div class="card" onclick="location.href='./reports/${run}/'">
+            <div class="report-link">
                 <div class="card-header">
                     <div>
                         <h3>Run #${run}</h3>
@@ -144,7 +144,7 @@ const cards = runs
                 <div class="report-info">
                     <p>${statsLine}</p>
                 </div>
-            </a>
+            </div>
         </div>`;
   })
   .join('\n');
