@@ -40,10 +40,6 @@ jobs:
         run: npx playwright test
         continue-on-error: true
 
-      - name: Generate index page
-        if: always()
-        run: node .github/workflows/generate-index.js
-
       - name: Upload Playwright HTML Report
         uses: actions/upload-artifact@v4
         if: always()
@@ -60,11 +56,42 @@ jobs:
           path: test-results/
           retention-days: 30
 
+      - name: Checkout gh-pages history
+        if: always()
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Prepare site directory with history and latest report
+        if: always()
+        run: |
+          rm -rf site
+          mkdir -p site
+          if [ -d gh-pages ]; then
+            cp -a gh-pages/. site/
+          fi
+          mkdir -p site/reports/${{ github.run_number }}
+          cp -a playwright-report/. site/reports/${{ github.run_number }}/
+          if [ -f .nojekyll ]; then
+            cp .nojekyll site/.nojekyll
+          fi
+          rm -rf site/.git
+
+      - name: Generate root index page
+        if: always()
+        env:
+          OUTPUT_DIR: site
+          GITHUB_RUN_NUMBER: ${{ github.run_number }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node .github/workflows/generate-index.js
+
       - name: Deploy Report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./playwright-report
-          destination_dir: reports/${{ github.run_number }}
-          keep_files: true
+          publish_dir: ./site
