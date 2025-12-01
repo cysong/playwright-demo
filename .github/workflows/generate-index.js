@@ -180,7 +180,7 @@ const indexHtml = `
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
-        .subtitle {
+        .header-subtitle {
             color: #718096;
             font-size: 1.1rem;
             display: block;
@@ -228,7 +228,7 @@ const indexHtml = `
         .latest { background: #667eea; }
         .view { background: #38a169; }
         .badge-group { display: flex; gap: 8px; align-items: center; }
-        .subtitle {
+        .card .subtitle {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
@@ -260,7 +260,7 @@ const indexHtml = `
     <div class="container">
         <div class="header">
             <h1>🎭 Playwright Test Reports</h1>
-            <p class="subtitle">${repoName} - Automated Test Results</p>
+            <p class="header-subtitle">${repoName} - Automated Test Results</p>
         </div>
 
         ${cards || '<p style="color: white; text-align: center;">No reports found.</p>'}
