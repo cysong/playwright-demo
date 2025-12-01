@@ -8,6 +8,14 @@ const repoName = repository.split('/')[1] || 'playwright-demo';
 const outputDir = process.env.OUTPUT_DIR || '.';
 const reportsDir = path.join(outputDir, 'reports');
 
+function formatDuration(ms) {
+  if (!Number.isFinite(ms) || ms < 0) return 'N/A';
+  const totalSeconds = Math.round(ms / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${minutes}m ${seconds.toString().padStart(2, '0')}s`;
+}
+
 // Try to read Playwright stats from a run directory.
 function loadStats(runDir) {
   const candidates = [
@@ -20,6 +28,12 @@ function loadStats(runDir) {
     try {
       const data = JSON.parse(fs.readFileSync(file, 'utf8'));
       const stats = data.stats || (data.summary && data.summary.stats) || data;
+      const startTime = data.startTime ? new Date(data.startTime) : null;
+      const durationMs = Number(
+        (stats && stats.duration) ??
+          data.duration ??
+          (data.json && data.json.stats && data.json.stats.duration)
+      );
       if (stats) {
         return {
           passed: Number(stats.expected ?? stats.passed ?? 0),
@@ -27,6 +41,8 @@ function loadStats(runDir) {
           skipped: Number(stats.skipped ?? 0),
           flaky: Number(stats.flaky ?? 0),
           total: Number(stats.total ?? 0),
+          startTime,
+          durationMs: Number.isFinite(durationMs) ? durationMs : null,
         };
       }
     } catch (err) {
@@ -55,19 +71,56 @@ const cards = runs
   .map((run) => {
     const isLatest = String(run) === String(runNumber);
     const stats = loadStats(path.join(reportsDir, run));
-    const statusLine = stats
-      ? `Total ${stats.total} | Pass ${stats.passed} | Fail ${stats.failed}` +
-        (stats.skipped ? ` | Skip ${stats.skipped}` : '') +
-        (stats.flaky ? ` | Flaky ${stats.flaky}` : '')
+    const statusState = stats
+      ? stats.failed > 0
+        ? 'failed'
+        : stats.total > 0
+          ? 'passed'
+          : 'unknown'
+      : 'unknown';
+    const statusLabel =
+      statusState === 'passed'
+        ? 'Passed'
+        : statusState === 'failed'
+          ? 'Failed'
+          : 'Unknown';
+    const icon =
+      statusState === 'passed' ? '✔' : statusState === 'failed' ? '✖' : '？';
+    const timeText = stats?.startTime
+      ? stats.startTime.toLocaleString()
+      : 'N/A';
+    const durationText = stats?.durationMs
+      ? formatDuration(stats.durationMs)
+      : 'N/A';
+    const statsLine = stats
+      ? `Total ${stats.total} · Pass ${stats.passed} · Fail ${stats.failed}` +
+        (stats.skipped ? ` · Skip ${stats.skipped}` : '') +
+        (stats.flaky ? ` · Flaky ${stats.flaky}` : '')
       : 'Status: unknown';
     return `
         <div class="card">
             <a href="./reports/${run}/" class="report-link">
-                <div class="report-info">
-                    <h3>Run #${run}</h3>
-                    <p>${statusLine}</p>
+                <div class="card-header">
+                    <div>
+                        <h3>Run #${run}</h3>
+                        <div class="subtitle">
+                            <span class="status-text ${statusState}">
+                                <span class="status-icon">${icon}</span> Status: ${statusLabel}
+                            </span>
+                            <span class="dot">•</span>
+                            <span>Time: ${timeText}</span>
+                            <span class="dot">•</span>
+                            <span>Duration: ${durationText}</span>
+                        </div>
+                    </div>
+                    <div class="badge-group">
+                        <span class="status-badge ${statusState}">${statusLabel}</span>
+                        ${isLatest ? '<span class="badge latest">Latest</span>' : '<span class="badge view">View</span>'}
+                    </div>
                 </div>
-                <span class="badge ${isLatest ? 'latest' : ''}">${isLatest ? 'Latest' : 'View'}</span>
+                <div class="report-info">
+                    <p>${statsLine}</p>
+                </div>
             </a>
         </div>`;
   })
@@ -121,10 +174,16 @@ const indexHtml = `
             transform: translateY(-5px);
             box-shadow: 0 15px 50px rgba(0,0,0,0.15);
         }
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+        }
         .report-link {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 12px;
             text-decoration: none;
             color: inherit;
         }
@@ -133,10 +192,7 @@ const indexHtml = `
             font-size: 1.5rem;
             margin-bottom: 8px;
         }
-        .report-info p {
-            color: #718096;
-            font-size: 0.95rem;
-        }
+        .report-info p { color: #4a5568; font-size: 0.95rem; }
         .badge {
             background: #48bb78;
             color: white;
@@ -146,6 +202,31 @@ const indexHtml = `
             font-weight: 600;
         }
         .latest { background: #667eea; }
+        .view { background: #38a169; }
+        .badge-group { display: flex; gap: 8px; align-items: center; }
+        .subtitle {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            color: #718096;
+            font-size: 0.95rem;
+        }
+        .dot { color: #cbd5e0; }
+        .status-text { font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+        .status-icon { font-size: 1rem; }
+        .status-text.passed { color: #2f855a; }
+        .status-text.failed { color: #c53030; }
+        .status-text.unknown { color: #718096; }
+        .status-badge {
+            padding: 8px 14px;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+        .status-badge.passed { background: #48bb78; color: #fff; }
+        .status-badge.failed { background: #f56565; color: #fff; }
+        .status-badge.unknown { background: #a0aec0; color: #fff; }
         .footer {
             text-align: center;
             color: white;
