@@ -4,7 +4,7 @@ const path = require('path');
 
 const runNumber = process.env.GITHUB_RUN_NUMBER || 'latest';
 const repository = process.env.GITHUB_REPOSITORY || '';
-const repoName = repository.split('/')[1] || 'playwright-demo';
+const repoName = repository.split('/')[1] || repository || '';
 const outputDir = process.env.OUTPUT_DIR || '.';
 const reportsDir = path.join(outputDir, 'reports');
 
@@ -24,13 +24,14 @@ function loadStats(runDir) {
     const data = JSON.parse(fs.readFileSync(file, 'utf8'));
     const stats = data.stats;
     if (!stats) return null;
+    const metadata = data.metadata || (data.config && data.config.metadata) || null;
     const total =
       Number(stats.expected ?? 0) +
       Number(stats.unexpected ?? 0) +
       Number(stats.flaky ?? 0) +
       Number(stats.skipped ?? 0);
-    const gitMeta = data.metadata && data.metadata.gitCommit;
-    const ciMeta = data.metadata && data.metadata.ci;
+    const gitMeta = metadata && metadata.gitCommit;
+    const ciMeta = metadata && metadata.ci;
     const commitHash =
       (gitMeta && (gitMeta.shortHash || gitMeta.hash)) ||
       (ciMeta && ciMeta.commitHash) ||
