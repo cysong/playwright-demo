@@ -16,54 +16,45 @@ function formatDuration(ms) {
   return `${minutes}m ${seconds.toString().padStart(2, '0')}s`;
 }
 
-// Try to read Playwright stats from a run directory.
+// Read stats and commit info from report.json in a run directory.
 function loadStats(runDir) {
-  const candidates = [
-    path.join(runDir, 'report.json'),
-    path.join(runDir, 'data', 'report.json'),
-    path.join(runDir, 'data', 'test-results.json'),
-  ];
-  for (const file of candidates) {
-    if (!fs.existsSync(file)) continue;
-    try {
-      const data = JSON.parse(fs.readFileSync(file, 'utf8'));
-      const stats = data.stats || (data.summary && data.summary.stats) || data;
-      const startTime = stats?.startTime
-        ? new Date(stats.startTime)
-        : data.startTime
-        ? new Date(data.startTime)
-        : null;
-      const durationMs = Number.isFinite(stats?.duration)
-        ? Number(stats.duration)
-        : Number.isFinite(data.duration)
-        ? Number(data.duration)
-        : Number(
-            data.json && data.json.stats && Number(data.json.stats.duration)
-          );
-      if (stats) {
-        const total =
-          Number(stats.total) ??
-          Number(
-            (stats.expected ?? 0) +
-              (stats.unexpected ?? 0) +
-              (stats.flaky ?? 0) +
-              (stats.skipped ?? 0)
-          );
-        return {
-          passed: Number(stats.expected ?? stats.passed ?? 0),
-          failed: Number(stats.unexpected ?? stats.failed ?? 0),
-          skipped: Number(stats.skipped ?? 0),
-          flaky: Number(stats.flaky ?? 0),
-          total: Number.isFinite(total) ? total : 0,
-          startTime,
-          durationMs: Number.isFinite(durationMs) ? durationMs : null,
-        };
-      }
-    } catch (err) {
-      // Ignore parse errors; fall through to next candidate.
-    }
+  const file = path.join(runDir, 'report.json');
+  if (!fs.existsSync(file)) return null;
+  try {
+    const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const stats = data.stats;
+    if (!stats) return null;
+    const total =
+      Number(stats.expected ?? 0) +
+      Number(stats.unexpected ?? 0) +
+      Number(stats.flaky ?? 0) +
+      Number(stats.skipped ?? 0);
+    const gitMeta = data.metadata && data.metadata.gitCommit;
+    const ciMeta = data.metadata && data.metadata.ci;
+    const commitHash =
+      (gitMeta && (gitMeta.shortHash || gitMeta.hash)) ||
+      (ciMeta && ciMeta.commitHash) ||
+      '';
+    const commitHref =
+      (gitMeta && gitMeta.commitHref) ||
+      (ciMeta && ciMeta.commitHref) ||
+      (commitHash && repository
+        ? `https://github.com/${repository}/commit/${commitHash}`
+        : '');
+    return {
+      passed: Number(stats.expected ?? 0),
+      failed: Number(stats.unexpected ?? 0),
+      skipped: Number(stats.skipped ?? 0),
+      flaky: Number(stats.flaky ?? 0),
+      total,
+      commitHash,
+      commitHref,
+      startTime: stats.startTime ? new Date(stats.startTime) : null,
+      durationMs: Number.isFinite(stats.duration) ? Number(stats.duration) : null,
+    };
+  } catch {
+    return null;
   }
-  return null;
 }
 
 // Collect existing run directories for the list (descending by numeric run number when possible).
@@ -89,29 +80,33 @@ const cards = runs
       ? stats.failed > 0
         ? 'failed'
         : stats.total > 0
-          ? 'passed'
-          : 'unknown'
+        ? 'passed'
+        : 'unknown'
       : 'unknown';
     const statusLabel =
       statusState === 'passed'
         ? 'Passed'
         : statusState === 'failed'
-          ? 'Failed'
-          : 'Unknown';
+        ? 'Failed'
+        : 'Unknown';
     const iconHtml =
       statusState === 'passed'
         ? '&check;'
         : statusState === 'failed'
         ? '&times;'
         : '?';
-    const icon =
-      statusState === 'passed' ? '✔' : statusState === 'failed' ? '✖' : '？';
     const timeText = stats?.startTime
-      ? stats.startTime.toLocaleString()
+      ? stats.startTime.toISOString().replace('T', ' ').replace('Z', ' UTC')
       : 'N/A';
     const durationText = stats?.durationMs
       ? formatDuration(stats.durationMs)
       : 'N/A';
+    const commitText =
+      stats?.commitHash && stats?.commitHref
+        ? `<a class="commit-link" href="${stats.commitHref}" target="_blank" rel="noopener noreferrer">${stats.commitHash}</a>`
+        : stats?.commitHash
+        ? stats.commitHash
+        : '';
     const statsLine = stats
       ? `Total ${stats.total} · Pass ${stats.passed} · Fail ${stats.failed}` +
         (stats.skipped ? ` · Skip ${stats.skipped}` : '') +
@@ -127,11 +122,22 @@ const cards = runs
                             <span>Time: ${timeText}</span>
                             <span class="dot">•</span>
                             <span>Duration: ${durationText}</span>
+                            ${
+                              commitText
+                                ? '<span class="dot">•</span><span>Commit: ' +
+                                  commitText +
+                                  '</span>'
+                                : ''
+                            }
                         </div>
                     </div>
                     <div class="badge-group">
                         <span class="status-badge ${statusState}">${iconHtml} ${statusLabel}</span>
-                        ${isLatest ? '<span class="badge latest">Latest</span>' : '<span class="badge view">View</span>'}
+                        ${
+                          isLatest
+                            ? '<span class="badge latest">Latest</span>'
+                            : '<span class="badge view">View</span>'
+                        }
                     </div>
                 </div>
                 <div class="report-info">
@@ -177,6 +183,8 @@ const indexHtml = `
         .subtitle {
             color: #718096;
             font-size: 1.1rem;
+            display: block;
+            text-align: center;
         }
         .card {
             background: white;
@@ -229,11 +237,6 @@ const indexHtml = `
             font-size: 0.95rem;
         }
         .dot { color: #cbd5e0; }
-        .status-text { font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
-        .status-icon { font-size: 1rem; }
-        .status-text.passed { color: #2f855a; }
-        .status-text.failed { color: #c53030; }
-        .status-text.unknown { color: #718096; }
         .status-badge {
             padding: 8px 14px;
             border-radius: 16px;
@@ -243,6 +246,8 @@ const indexHtml = `
         .status-badge.passed { background: #48bb78; color: #fff; }
         .status-badge.failed { background: #f56565; color: #fff; }
         .status-badge.unknown { background: #a0aec0; color: #fff; }
+        .commit-link { color: #2b6cb0; text-decoration: underline; }
+        .commit-link:hover { text-decoration: none; }
         .footer {
             text-align: center;
             color: white;
