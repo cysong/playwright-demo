@@ -91,6 +91,7 @@ test.describe.serial('Odoo Sales Order to Invoice Workflow', () => {
 
             await page.getByRole('button', { name: 'Add a product' }).click();
             await selectComboboxOption(page, 'Search a product', PRODUCT_NAME);
+            await page.waitForTimeout(300);
         });
 
 
