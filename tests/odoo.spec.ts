@@ -3,13 +3,18 @@ import { test, expect } from '@playwright/test';
 // Global variable to store order number across tests
 let orderNumber: string;
 
+// Load environment variables
+const ODOO_EMAIL = process.env.ODOO_EMAIL || '';
+const ODOO_PASSWORD = process.env.ODOO_PASSWORD || '';
+const ODOO_URL = process.env.ODOO_URL || '';
+
 test.describe.serial('Odoo Sales Order to Invoice Workflow', () => {
 
     test.beforeEach(async ({ page }) => {
         // Login before each test
-        await page.goto('https://lincoln-university.odoo.com/odoo/sales');
-        await page.getByRole('textbox', { name: 'Email' }).fill('yansongc@gmail.com');
-        await page.getByRole('textbox', { name: 'Password' }).fill('Hust510@od');
+        await page.goto(ODOO_URL);
+        await page.getByRole('textbox', { name: 'Email' }).fill(ODOO_EMAIL);
+        await page.getByRole('textbox', { name: 'Password' }).fill(ODOO_PASSWORD);
         await page.getByRole('button', { name: 'Log in' }).click();
     });
 

@@ -40,6 +40,10 @@ npm install
 
 # Install Playwright browsers
 npx playwright install
+
+# Configure environment variables
+cp .env.example .env
+# Edit .env file and add your Odoo credentials
 ```
 
 ## Usage
@@ -65,6 +69,17 @@ npm run test:report
 npx playwright test tests/odoo.spec.ts -g "Test Case 1"
 ```
 
+## Environment Variables
+
+Create a `.env` file in the project root with the following variables:
+
+```bash
+ODOO_EMAIL=your-email@example.com
+ODOO_PASSWORD=your-password
+ODOO_URL=https://your-odoo-instance.odoo.com/odoo/sales
+```
+
+
 ## Project Structure
 ```
 playwright-demo/
@@ -72,6 +87,8 @@ playwright-demo/
 │   └── odoo.spec.ts          # Main test suite
 ├── playwright.config.ts       # Playwright configuration
 ├── package.json              # Dependencies and scripts
+├── .env                      # Environment variables (not in git)
+├── .env.example              # Environment variables template
 ├── README.md                 # Project documentation
 └── Specifics.md              # Test case specifications
 ```
@@ -79,6 +96,7 @@ playwright-demo/
 ## Features
 - **Sequential Testing**: Uses `test.describe.serial()` for ordered test execution
 - **Hooks**: `beforeEach` for login, `afterEach` for logout
+- **Environment Configuration**: Credentials stored securely in `.env` file
 - **State Management**: Global variable to share order number across tests
 - **Assertions**: Validates status changes, order numbers, and invoice generation
 
@@ -86,6 +104,7 @@ playwright-demo/
 - Tests must run sequentially due to data dependencies
 - Each test includes automatic login/logout via hooks
 - Order number is shared across test cases using a global variable
+- Sensitive credentials are loaded from `.env` file (not committed to git)
 
 
 
