@@ -46,10 +46,16 @@
             transform: translateY(-5px);
             box-shadow: 0 15px 50px rgba(0,0,0,0.15);
         }
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+        }
         .report-link {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 12px;
             text-decoration: none;
             color: inherit;
         }
@@ -58,10 +64,7 @@
             font-size: 1.5rem;
             margin-bottom: 8px;
         }
-        .report-info p {
-            color: #718096;
-            font-size: 0.95rem;
-        }
+        .report-info p { color: #4a5568; font-size: 0.95rem; }
         .badge {
             background: #48bb78;
             color: white;
@@ -71,6 +74,31 @@
             font-weight: 600;
         }
         .latest { background: #667eea; }
+        .view { background: #38a169; }
+        .badge-group { display: flex; gap: 8px; align-items: center; }
+        .subtitle {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            color: #718096;
+            font-size: 0.95rem;
+        }
+        .dot { color: #cbd5e0; }
+        .status-text { font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+        .status-icon { font-size: 1rem; }
+        .status-text.passed { color: #2f855a; }
+        .status-text.failed { color: #c53030; }
+        .status-text.unknown { color: #718096; }
+        .status-badge {
+            padding: 8px 14px;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+        .status-badge.passed { background: #48bb78; color: #fff; }
+        .status-badge.failed { background: #f56565; color: #fff; }
+        .status-badge.unknown { background: #a0aec0; color: #fff; }
         .footer {
             text-align: center;
             color: white;
@@ -88,42 +116,132 @@
 
         
         <div class="card">
-            <a href="./reports/12/" class="report-link">
+            <a href="./reports/13/" class="report-link">
+                <div class="card-header">
+                    <div>
+                        <h3>Run #13</h3>
+                        <div class="subtitle">
+                            <span class="status-text failed">
+                                <span class="status-icon">✖</span> Status: Failed
+                            </span>
+                            <span class="dot">•</span>
+                            <span>Time: N/A</span>
+                            <span class="dot">•</span>
+                            <span>Duration: 3m 28s</span>
+                        </div>
+                    </div>
+                    <div class="badge-group">
+                        <span class="status-badge failed">Failed</span>
+                        <span class="badge latest">Latest</span>
+                    </div>
+                </div>
                 <div class="report-info">
-                    <h3>Run #12</h3>
+                    <p>Total 0 · Pass 5 · Fail 1 · Skip 2 · Flaky 1</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="./reports/12/" class="report-link">
+                <div class="card-header">
+                    <div>
+                        <h3>Run #12</h3>
+                        <div class="subtitle">
+                            <span class="status-text unknown">
+                                <span class="status-icon">？</span> Status: Unknown
+                            </span>
+                            <span class="dot">•</span>
+                            <span>Time: N/A</span>
+                            <span class="dot">•</span>
+                            <span>Duration: N/A</span>
+                        </div>
+                    </div>
+                    <div class="badge-group">
+                        <span class="status-badge unknown">Unknown</span>
+                        <span class="badge view">View</span>
+                    </div>
+                </div>
+                <div class="report-info">
                     <p>Status: unknown</p>
                 </div>
-                <span class="badge latest">Latest</span>
             </a>
         </div>
 
         <div class="card">
             <a href="./reports/11/" class="report-link">
+                <div class="card-header">
+                    <div>
+                        <h3>Run #11</h3>
+                        <div class="subtitle">
+                            <span class="status-text unknown">
+                                <span class="status-icon">？</span> Status: Unknown
+                            </span>
+                            <span class="dot">•</span>
+                            <span>Time: N/A</span>
+                            <span class="dot">•</span>
+                            <span>Duration: N/A</span>
+                        </div>
+                    </div>
+                    <div class="badge-group">
+                        <span class="status-badge unknown">Unknown</span>
+                        <span class="badge view">View</span>
+                    </div>
+                </div>
                 <div class="report-info">
-                    <h3>Run #11</h3>
                     <p>Status: unknown</p>
                 </div>
-                <span class="badge ">View</span>
             </a>
         </div>
 
         <div class="card">
             <a href="./reports/10/" class="report-link">
+                <div class="card-header">
+                    <div>
+                        <h3>Run #10</h3>
+                        <div class="subtitle">
+                            <span class="status-text unknown">
+                                <span class="status-icon">？</span> Status: Unknown
+                            </span>
+                            <span class="dot">•</span>
+                            <span>Time: N/A</span>
+                            <span class="dot">•</span>
+                            <span>Duration: N/A</span>
+                        </div>
+                    </div>
+                    <div class="badge-group">
+                        <span class="status-badge unknown">Unknown</span>
+                        <span class="badge view">View</span>
+                    </div>
+                </div>
                 <div class="report-info">
-                    <h3>Run #10</h3>
                     <p>Status: unknown</p>
                 </div>
-                <span class="badge ">View</span>
             </a>
         </div>
 
         <div class="card">
             <a href="./reports/9/" class="report-link">
+                <div class="card-header">
+                    <div>
+                        <h3>Run #9</h3>
+                        <div class="subtitle">
+                            <span class="status-text unknown">
+                                <span class="status-icon">？</span> Status: Unknown
+                            </span>
+                            <span class="dot">•</span>
+                            <span>Time: N/A</span>
+                            <span class="dot">•</span>
+                            <span>Duration: N/A</span>
+                        </div>
+                    </div>
+                    <div class="badge-group">
+                        <span class="status-badge unknown">Unknown</span>
+                        <span class="badge view">View</span>
+                    </div>
+                </div>
                 <div class="report-info">
-                    <h3>Run #9</h3>
                     <p>Status: unknown</p>
                 </div>
-                <span class="badge ">View</span>
             </a>
         </div>
 
